@@ -1,0 +1,22 @@
+<% content_for :head do %>
+  <%= javascript_include_tag  ["/tiny_mce/jquery.tinymce.js"] %>
+  <script>
+    $(function(){
+      add_tinymce_to('#comment_body');
+    });
+  </script>
+<% end %>
+
+<%= form_for([comment.topic, comment], :remote => true) do |f| %>
+  <div class="field description">
+    <%= f.label :body %>
+    <%= f.text_area :body,
+      :title=> t('comment.form.field.body.hint') %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit  t('action.save'),
+      :title =>  t('comment.form.save.hint'),
+      :class => "save_button" %>
+  </div>
+<% end %>

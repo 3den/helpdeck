@@ -1,0 +1,17 @@
+<div class="user row">
+  <div class="user_image left">
+    <img class="box_shadow rounded" width="53" src="<%=  user.image %>" />
+  </div>
+  <div class="user_details col">
+    <h4><%=  user.name %></h4>
+
+    <div class="user_votes" title="<%= t("votes.title") %>" >
+      <img class="sprite" alt="<%= t("votes.title") %>" src="/images/blank.png" />
+      <%=  user.total_votes %>
+    </div>
+    <a class="logout" href="<%= logout_path %>">
+      <img class="sprite" alt="x " src="/images/blank.png" />
+      <%= t "user.sign_out.title" %>
+    </a>
+  </div>
+</div>

@@ -1,0 +1,109 @@
+<div id="topic_<%= @topic.id %>" class="topic">
+  <table class="topic_table">
+    <tbody>
+    <tr>
+      <td class="topic_stats col_1">
+        <div class="votes <%= voted(@topic) %>">
+          <% if current_user && !is_owner?(@topic) %>
+            <div class="vote_up">
+              <%= button_to raw("up &uArr;"),
+                vote_topic_path(@topic.id, 'up'),
+                :class => "sprite",
+                :method => "put",
+                :title => t('action.vote.up.hint'),
+                :remote => true %>
+            </div>
+          <% end %>
+          <div class="user_image" title="<%= t('votes.title') %>">
+            <img width="48" src="<%=  @topic.user.image %>" />
+            <!--strong>
+              <b class="user_votes"><%=  @topic.user.total_votes %></b>
+            </strong-->
+          </div>
+          <% if current_user && !is_owner?(@topic) %>
+            <div class="vote_down">
+              <%= button_to raw("down &dArr;"),
+                vote_topic_path(@topic.id, 'down'),
+                :class => "sprite",
+                :method => "put",
+                :title => t('action.vote.down.hint'),
+                :remote => true %>
+            </div>
+          <% end %>
+        </div>
+      </td>
+
+      <td>
+        <h5>
+          <a href="<%= "/#{@topic.user.username}/q" %>"><%=  @topic.user.username %></a>
+          <small><%=  @topic.user.name %></small>
+        </h5>
+
+        <div class="description">
+          <%= raw auto_link(@topic.body, :all, :target => "_blank") %>
+        </div>
+
+        <details>
+          <span class="created_at">
+            <%= raw  t "details.created_at", :at => time_ago_in_words(@topic.created_at.to_time) %>
+          </span>
+
+          <span class="votes">
+            <%= raw t 'details.votes', :x => @topic.total_votes %>
+          </span>
+
+          <span class="views">
+            <%= raw t 'details.views', :x => @topic.total_views %>
+          </span>
+          <div class="clear"></div>
+        </details>
+        <div class="actions">
+          <% if is_owner?(@topic) %>
+
+              <%= button_to   t('action.edit.title'), edit_topic_path(@topic),
+                :method => "get",
+                :class => "action edit",
+                :title => t('action.edit.hint') %>
+
+
+              <%= button_to   t('action.delete.title'), topic_path(@topic),
+                :method => "delete",
+                :confirm => t('topic.delete.confirm'),
+                :class => "action delete",
+                :title => t('action.delete.hint') %>
+
+          <% end %>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="comments">
+  <div id="filters">
+    <%= render "comments/filters/filters" %>
+  </div>
+
+  <div id="comments">
+     <%= render @comments %>
+  </div>
+
+  <div class="comment_form">
+    <% if (current_user) %>
+      <h3><%= t 'comment.form.title' %></h3>
+      <%= render_comment_form(@topic) %>
+    <% else %>
+      <b><%= raw t 'comment.form.login.title' %></b>
+      <p>
+        <a href="<%= login_path "twitter" %>" class="sign_in_with_twitter" title="<%= t('user.sign_in.twitter.hint') %>">
+          <img class="sprite" src="/images/blank.png"
+               alt="<%= t('user.sign_in.twitter.hint') %>" />
+        </a>
+      </p>
+    <% end %>
+  </div>
+
+  <%= pagination(@pagination, t('stats.comments')) %>
+</div>

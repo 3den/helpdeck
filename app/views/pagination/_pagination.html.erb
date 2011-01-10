@@ -1,0 +1,19 @@
+<table class="pagination">
+  <tr>
+    <td class="pagination_total col_3">
+      <big><%= pag[:total_items] %></big>
+      <small><%= pag[:items_title] %></small>
+    </td>
+    <td>
+      <ul class="pagination_pages">
+        <% for p in (pag[:start] .. pag[:end])  do %>
+            <li class="<%= "active" if current_page?(:page => p.to_s) %>">
+              <a href="<%= current_page(:page => p) %>"><%= p %></a>
+              <span class="">&uArr;</span>
+            </li>
+        <% end %>
+        <div class="clear"></div>
+      </ul>
+    </td>
+  </tr>
+</table>

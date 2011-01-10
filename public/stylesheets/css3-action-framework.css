@@ -1,0 +1,132 @@
+/* CSS Action Framework */
+
+/* On mouseover */ 
+
+.h-scale:hover {
+	-webkit-transform: scale(1.5);
+	-moz-transform: scale(1.5);
+	-o-transform: scale(1.5);
+	transform: scale(1.5);
+}
+  
+.h-translate:hover {
+	-moz-transform:translate(-10px,-10px);
+	-webkit-transform:translate(-10px,10px);
+	-o-transform:translate(-10px,10px);
+	transform:translate(-10px,10px);
+}
+
+.h-rotate:hover {
+	-moz-transform:rotate(50deg);
+	-webkit-transform:rotate(50deg);
+	-o-transform:rotate(50deg);
+	transform:rotate(50deg);
+}
+
+.h-box-shadow:hover {
+	-moz-box-shadow: 2px 2px 2px #666; 
+	-webkit-box-shadow: 2px 2px 2px #666; 
+	box-shadow: 2px 2px 2px #666; 
+}
+  
+.h-multitransform:hover {
+	-moz-transform:rotate(70deg) scale(1.5);
+	-webkit-transform:rotate(70deg) scale(1.5);
+	-o-transform:rotate(70deg) scale(1.5);
+	transform:rotate(70deg) scale(1.5);
+}
+
+.h-hide:hover {
+	-webkit-transition-duration: 3s;
+	-moz-transition-duration:3s;
+	-o-transition-duration:3s;
+	opacity: 0;
+}
+
+
+/* On Click */ 
+
+
+.a-scale:active {
+	-webkit-transform: scale(1.5);
+	-moz-transform: scale(1.5);
+	-o-transform: scale(1.5);
+	transform: scale(1.5);
+  }
+  
+.a-translate:active {
+	-moz-transform:translate(-10px,-10px);
+	-webkit-transform:translate(-10px,10px);
+	-o-transform:translate(-10px,10px);
+	transform:translate(-10px,10px);
+}
+
+.a-rotate:active {
+	-moz-transform:rotate(50deg);
+	-webkit-transform:rotate(50deg);
+	-o-transform:rotate(50deg);
+	transform:rotate(50deg);
+}
+.a-box-shadow:active {
+	-moz-box-shadow: 2px 2px 2px #666; 
+	-webkit-box-shadow: 2px 2px 2px #666; 
+	box-shadow: 2px 2px 2px #666; 
+}
+
+.a-multitransform:active {
+	-moz-transform:rotate(70deg) scale(1.5);
+	-webkit-transform:rotate(70deg) scale(1.5);
+	-o-transform:rotate(70deg) scale(1.5);
+	transform:rotate(70deg) scale(1.5);
+}
+
+.a-hide:active {
+	-webkit-transition-duration: 3s;
+	-moz-transition-duration:3s;
+	-o-transition-duration:3s;
+	opacity: 0;
+}
+
+/* Target */
+
+
+
+.t-scale:target {
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+	-o-transform: scale(1.5);
+	transform: scale(1.5);
+  }
+  
+.t-translate:target {
+	-moz-transform:translate(-10px,-10px);
+	-webkit-transform:translate(-10px,10px);
+	-o-transform:translate(-10px,10px);
+	transform:translate(-10px,10px);
+}
+
+.t-rotate:target {
+	-moz-transform:rotate(50deg);
+	-webkit-transform:rotate(50deg);
+	-o-transform:rotate(50deg);
+	transform:rotate(50deg);
+}
+.t-box-shadow:target {
+	-moz-box-shadow: 2px 2px 2px #666; 
+	-webkit-box-shadow: 2px 2px 2px #666; 
+	box-shadow: 2px 2px 2px #666; 
+}
+
+.t-multitransform:target{
+	-moz-transform:rotate(70deg) scale(1.5);
+	-webkit-transform:rotate(70deg) scale(1.5);
+	-o-transform:rotate(70deg) scale(1.5);
+	transform:rotate(70deg) scale(1.5);
+}
+
+.t-hide:target {
+	-webkit-transition-duration: 3s;
+	-moz-transition-duration:3s;
+	-o-transition-duration:3s;
+	opacity: 0;
+}

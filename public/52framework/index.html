@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset=utf-8>
+<title>52Framework -- brought to you by the enavu network - Angel Grablev</title>
+<meta name="keywords" content="keywords, here" />
+<meta name="description" content="your description here" />
+
+<script src="js/modernizr-1.1.min.js"></script><!-- this is the javascript allowing html5 to run in older browsers -->
+<!--[if IE]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
+
+<link rel="stylesheet" type="text/css" href="css/reset.css" media="screen" title="html5doctor.com Reset Stylesheet" />
+<link rel="stylesheet" type="text/css" href="css/css3.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/general.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/grid.css" media="screen" />
+
+<style>
+/* Feel free to remove these styles, they are for demo page */
+
+header {height:112px; position:relative; margin-bottom:5px;}
+	header .logo {font-size:2.5em; height:52px; padding-top:28px; font-weight:700; text-shadow:1px 1px 2px #000; color:#fff; filter: Shadow(Color=#666666, Direction=135, Strength=3);}
+	header .statement {width:20%; text-align:right; padding-top:30px;}
+header nav { background-color:#525252; color:#fff; height:30px;}
+	nav ul {list-style:none;}
+	nav ul li {float:left; margin-left:5px;}
+	nav ul li a {display:block; color:#fff; text-decoration:none; padding:2px 8px; margin-top:8px;  
+					-moz-border-radius-topleft: 5px; -webkit-border-top-left-radius: 5px; -moz-border-radius-topright: 5px; -webkit-border-top-right-radius: 5px;}
+	nav ul li a:hover, nav ul li.active a {background-color:#fff; color:#000;}
+aside {min-height:525px;}	
+
+	.submit, .submit:visited {
+		background: #525252; 
+		display: inline-block; 
+		padding: 5px 10px 6px; 
+		color: #fff; 
+		-moz-border-radius: 5px; 
+		-webkit-border-radius: 5px;
+		box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+		-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+		-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+		border:none;
+		text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+		position: relative;
+		cursor: pointer;
+		margin-bottom:5px;
+	}
+
+footer { font-size:.8em; } 
+</style>
+</head>
+<body  onload="draw();">
+<div class="row">
+    <header>
+        <div class="logo left">52framework</div>
+        
+        <div class="statement right">The framework from the future!</div>
+        
+        <div class="clear"></div>
+        
+        <nav>
+        	<ul>
+            	<li class="active"><a href="/">Home</a></li>
+                <li><a href="css3.html">CSS3</a></li>
+                <li><a href="canvas.html">Canvas</a></li>
+                <li><a href="http://52framework.com/documentation">Documentation</a></li>
+                <li><a href="http://52framework.com/about">About</a></li>
+                <li><a href="http://enavu.com">enavu</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="clear"></div>
+    <aside class="col_4 col">
+    	<h2>Form Elements</h2>
+        <form>
+        	<fieldset><legend>Fieldset</legend>
+                <label for="normalText">Normal Text</label>
+                <input type="text" value="normal text field" name="normalText" id="normalText" class="width_3" placeholder="Placeholder for Normal Text" autofocus />
+                <!-- placeholder text is text that stays in the input field until clicked, autofocus will select that element on the page -->
+                <label for="email">Email</label>
+                <input type="email" value="email@field.com" name="email" id="email" class="width_3" />
+                <label for="url">URL</label>
+                <input type="url" value="url.com" name="url" id="url" class="width_3" />
+                <label for="required">Required</label>
+                <input type="text" required="" value="required" name="required" id="required" class="width_3" />
+                <div class="clear"></div>
+                <button class="submit">submit &raquo;</button>
+            </fieldset>
+        </form>
+    </aside>
+    
+    <div class="content col_12 col">
+        <article>
+            <h1>This is a title h1</h1>
+            <blockquote class="right">This is what a blockquote will look like, floated right.<br />Testing a second line inside the blockquote.</blockquote>
+            <p>Lorem ipsum <a href="#">link one</a> dolor sit amet, consectetur adipiscing elit. Nullam  a purus ac est dapibus feugiat eu eget nulla. Sed molestie feugiat viverra. Pellentesque consectetur, leo in faucibus congue, elit purus bibendum tellus, non tincidunt tortor mauris in sem. Suspendisse sodales metus eget sem suscipit eleifend. Proin porttitor, ante vel egestas pretium, nulla eros mollis eros, dapibus molestie lacus mi at sapien. Fusce risus risus, vulputate vel bibendum nec, accumsan non lacus.Fusce viverra mollis sapien non mattis. Suspendisse id est sapien. Aliquam quis tellus sed lorem fermentum rutrum in eget urna. Mauris ac dolor sit amet tellus tristique eleifend. Morbi venenatis ultricies eleifend. Nunc arcu lorem, feugiat pulvinar laoreet convallis, consequat sed elit. Suspendisse potenti.Vivamus a turpis augue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi blandit erat eget purus gravida nec aliquam lectus sollicitudin. Aenean semper tortor nunc, dignissim malesuada arcu. Nunc nec massa a erat consectetur porta vitae eu mauris. Donec a orci dolor. Sed ac erat sed ipsum imperdiet accumsan. </p>
+        </article>  
+       
+       <article> 
+            <h2>This is an h2</h2>
+        <p>Nulla facilisi. Etiam eget laoreet turpis. Duis magna odio, volutpat eu varius vitae, interdum eu felis. Pellentesque luctus tincidunt urna vel dictum. Etiam facilisis purus ut lorem aliquet eleifend. Sed porttitor semper turpis mattis iaculis. Vivamus a turpis augue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi blandit erat eget purus gravida nec aliquam lectus sollicitudin.
+           <code>
+                
+                css {<br>
+                -moz-border-radius: 5px; <br>
+                -webkit-border-radius: 5px;<br>
+                -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);<br>
+                -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);<br>
+                }<br><br>
+               
+                &lt;body&gt;<br>
+                &lt;section class=&quot;row&quot;&gt;<br>
+                    &lt;header&gt;        <br>
+                        &lt;nav&gt;<br>
+                        &lt;/nav&gt;<br>
+                    &lt;/header&gt;<br>
+                    &lt;aside class=&quot;col_4 col&quot;&gt;<br>
+                    &lt;/aside&gt;<br>
+                    &lt;section class=&quot;content col_12 col&quot;&gt;<br>
+                         &lt;article&gt;		<br>
+                         &lt;/article&gt;<br>
+                    &lt;/section&gt;&lt;!-- end content --&gt;<br>
+                &lt;/section&gt;&lt;!-- end wrap --&gt;<br>
+                &lt;footer class=&quot;wrap_16&quot;&gt;<br>
+                &lt;/footer&gt;<br>
+                &lt;/body&gt;<br>
+                
+           </code>
+        <p></p>
+             Aenean semper tortor nunc, dignissim malesuada arcu. Nunc nec massa a erat consectetur porta vitae eu mauris. Donec a orci dolor. Sed ac erat sed ipsum imperdiet accumsan. Nullam commodo neque adipiscing lacus sagittis sit amet dictum urna vestibulum. Nulla sapien turpis, laoreet in lacinia sed, malesuada sit amet odio. Maecenas cursus mauris vel nunc adipiscing id bibendum ipsum faucibus.</p>
+        <article>    
+            <h3>This is an h3</h3>
+            <p>Duis ac arcu ante, at lacinia dui. Ut eget justo in nulla rutrum mollis. Mauris euismod justo et quam bibendum laoreet volutpat lorem mollis. In hac habitasse platea dictumst.
+            <pre>This is a pre tag</pre>
+             Mauris ut eleifend neque. Duis nulla metus, tempus nec varius quis, tincidunt consectetur nisi. Donec rhoncus quam vel quam bibendum rutrum. Mauris et commodo felis. Nam varius eleifend nulla quis sagittis. Quisque id tortor at dolor dictum interdum.</p>
+        </article>
+        <article>
+            <h2>List Elements</h2>
+            <ul>
+                <li>List item 1</li>
+                <li>List item 2</li>
+            </ul>	
+            <div class="clear" style="height:20px;"></div>			
+            <h2>Other Elements Styling</h2>	
+            
+            <p>
+                    This is <abbr title="title">abbreviation</abbr><br>
+                    This is <strong>strong</strong><br>
+                    This is <em>emphasis</em><br>
+                    This is <b>bold text</b><br>
+                    This is <i>italic text</i><br>
+                    This is <cite>cite</cite><br>
+                    This is <small>small text</small><br>
+                    This is <big>big text</big><br>
+                    This is <del>deleted text</del><br>
+                    This is <ins>inserted text</ins><br>
+                    This is <dfn>defining instance</dfn><br>
+                    This is <kbd>user input</kbd><br>
+                    This is <samp>sample output</samp><br>
+                    This is <q>inline quotation</q> <br>
+                    These are <sub>subscript</sub> and <sup>superscript</sup><br>
+                    This is <var>a variable</var>
+            </p>
+        </article>
+  </div><!-- end content -->
+  <div class="clear" style="height:10px; border-bottom:1px solid #ccc;"></div>
+</div><!-- end wrap -->
+<footer class="row">
+    <section class="col_8 col align_left">
+    All rights reserved 52framework owned by <a href="http://enavu.com">enavu network</a>
+    </section>
+    <section class="col_8 col align_right">
+    Have questions? Contact me at angel@enavu.com | Even if it's just to say thanks!
+    </section>
+</footer>
+</body>
+</html>

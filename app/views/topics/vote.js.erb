@@ -1,0 +1,20 @@
+//<script>
+var topic_selector = "#topic_<%= @topic.id %>";
+var votes = $(topic_selector +" .votes");
+
+<% if @vote %>
+    var msg = "<%= flash[:success] %>";
+ 
+    votes.find(".user_votes").html("<%= @topic.user.total_votes %>");
+    votes.find(".topic_votes").html("<%= @topic.total_votes %>");
+    votes.effect("highlight");
+
+    ajaxMessage(msg, 'success');
+<% else %>
+    var msg = "<%= flash[:alert] %>";
+    votes.effect("bounce", {direction:"left", distance:"10"}, "fast");
+
+    ajaxMessage(msg, 'alert');
+<% end %>
+//</script>
+<% flash.discard %>

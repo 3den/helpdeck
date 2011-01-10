@@ -1,0 +1,23 @@
+
+<nav class="filters">
+  <div>
+    <h2><%= raw t 'comments.title', :x => @topic.comments.size %></h2>
+  </div>
+  <ul>
+    <li class="<%= "active" if current_page?(:order => "new") %>">
+      <a href="<%= current_page :order => "new", :page => 1 %>" title="<%= t ('filters.new.hint') %>">
+        <%= t ('filters.new.title') %>
+      </a>
+    </li>
+    <li class="<%= "active" if current_page?(:order => "old") %>">
+      <a href="<%= current_page :order => "old", :page => 1 %>" title="<%= t ('filters.old.hint') %>">
+        <%= t ('filters.old.title') %>
+      </a>
+    </li>
+    <li class="<%= "active" if current_page?(:order => "votes") %>">
+      <a href="<%= current_page :order => "votes", :page => 1 %>" title="<%= t ('filters.votes.hint') %>">
+        <%= t ('filters.votes.title') %>
+      </a>
+    </li>
+  </ul>
+</nav>

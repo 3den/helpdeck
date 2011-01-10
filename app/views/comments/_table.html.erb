@@ -1,0 +1,68 @@
+<table class="comments_table">
+  <tbody>
+    <% @comments.each do |comment| %>
+      <tr id="comment_<%= comment.id %>" class="comment">
+        <td class="comment_stats col_1">
+          <div class="votes">
+            <% if current_user %>
+              <div class="vote_up">
+                <%= button_to raw("up &uArr;"),
+                  vote_comment_path(comment.id, 'up'),
+                  :class => "sprite",
+                  :method => "put",
+                  :title => t('action.vote.up.hint'),
+                  :remote => true %>
+              </div>
+            <% end %>
+            <div class="user_image" title="<%= t('votes.title') %>">
+              <img width="48" src="<%=  comment.user.image %>" />
+            </div>
+            <% if current_user %>
+              <div class="vote_down">
+                <%= button_to raw("down &dArr;"),
+                  vote_comment_path(comment.id, 'down'),
+                  :class => "sprite",
+                  :method => "put",
+                  :title => t('action.vote.down.hint'),
+                  :remote => true %>
+              </div>
+            <% end %>
+          </div>
+        </td>
+
+        <td>
+          <h5>
+            <a href="<%= "/#{comment.user.username}/q" %>"><%=  comment.user.username %></a>
+            <small><%=  comment.user.name %></small>
+            <a name="c<%= comment.id %>" />
+          </h5>
+
+          <div class="description">
+            <%= raw comment.body %>
+          </div>
+
+          <details class="row">
+            <span class="created_at col">
+              <%= raw  t "details.created_at", :at => time_ago_in_words(comment.created_at.to_time) %>
+            </span>
+
+            <span class="votes col">
+              <%= raw t 'details.votes', :x => comment.total_votes %>
+            </span>
+          </details>
+
+          <div class="actions">
+            <% if is_owner?(comment) || is_owner?(comment.topic) %>
+              <span class="action delete">
+                <%= button_to   t('action.delete.title'), topic_comment_path(comment.topic, comment),
+                  :method => "delete",
+                  :confirm => t('comment.delete.confirm'),
+                  :title => t('action.delete.hint') %>
+              </span>
+            <% end %>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

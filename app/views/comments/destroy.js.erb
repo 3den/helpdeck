@@ -1,0 +1,10 @@
+//<script>
+
+var msg = "<%= flash[:success] %>";
+var msg_type = "success"
+$("#comment_<%= @id %>").effect("highlight").hide('explode');
+$('.topic_comments').html("<%= @topic.comments.size %>")
+
+ajaxMessage(msg, msg_type);
+<% flash.discard %>
+//</script>

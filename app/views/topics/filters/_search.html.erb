@@ -1,0 +1,6 @@
+<div class="search">
+  <%= form_tag current_page(:page => 1, :controller => :topics), :method => "get" do |f| %>
+    <input type="text" id="search" name="search" value="<%= params[:search] %>" title="<%= t('filters.search.hint') %>" />
+    <input type="submit" class="sprite" value="<%= t("filters.search.title") %>"/>
+  <% end %>
+</div>

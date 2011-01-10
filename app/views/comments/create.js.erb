@@ -1,0 +1,16 @@
+//<script>
+<% if @comment %>
+    var msg = "<%= flash[:success] %>";
+    var msg_type = "success"
+    $("#comments").append("<%= escape_javascript(render @comment) %>");
+    $("#comment_<%= @comment.id %>").show('drop', {direction:"down"}).effect("highlight");
+    $('#comment_body').val("");
+    $('.topic_comments').html("<%= @topic.comments.size %>")
+<% else %>
+    var msg = "<%= flash[:alert] %>";
+    var msg_type = "alert"
+    $('#comments_body').effect("bounce", {direction:"left", distance:"10"}, "fast");
+<% end %>
+ajaxMessage(msg, msg_type);
+<% flash.discard %>
+//</script>

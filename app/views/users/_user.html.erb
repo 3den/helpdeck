@@ -1,0 +1,13 @@
+<div class="user">
+  <div class="user_image left">
+    <img class="box_shadow rounded" width="35" src="<%=  user.image %>" />
+  </div>
+  <div class="user_details col">
+    <h4><a href="<%= "/#{user.username}/q" %>">@<%=  user.username %></a></h4>
+
+    <div class="user_votes" title="<%= t("field.votes") %>" >
+      <img class="sprite" alt="<%= t("field.votes") %>" src="/images/blank.png" />
+      <%=  user.total_votes %>
+    </div>
+  </div>
+</div>

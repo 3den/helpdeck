@@ -1,0 +1,67 @@
+
+  <table class="topic_table">
+    <tr>
+      <td class="topic_stats col_1">
+        <div class="votes <%= voted(@topic) %>" title="<%= t "field.votes" %>">
+          <div class="vote_up">
+            <%= button_to raw("up &uArr;"),
+              vote_topic_path(@topic.id, 'up'),
+              :class => "sprite",
+              :method => "put",
+              :remote => true %>
+          </div>
+          <big><%= @topic.total_votes %></big>
+          <div class="vote_down">
+            <%= button_to raw("down &dArr;"),
+              vote_topic_path(@topic.id, 'down'),
+              :class => "sprite",
+              :method => "put",
+              :remote => true %>
+          </div>
+        </div>
+
+        <div class="actions">
+          <% if is_owner?(@topic) %>
+            <div class="action_edit">
+              <%= button_to   t('action.edit.link'), edit_topic_path(@topic),
+                :method => "get",
+                :class => "sprite",
+                :title => t('action.edit.link') %>
+            </div>
+
+            <div class="action_delete">
+              <%= button_to   t('action.delete.link'), topic_path(@topic),
+                :method => "delete",
+                :confirm => t('action.delete.confirm'),
+                :class => "sprite",
+                :title => t('action.delete.link') %>
+            </div>
+          <% end %>
+        </div>
+
+        <div class="views rounded">
+          <big><%= (@topic.total_views > 999) ? "#{@topic.total_views/1000}k": @topic.total_views %></big>
+          <small>views</small>
+        </div>
+      </td>
+
+      <td>
+        <div class="description">
+          <%= raw @topic.body %>
+        </div>
+        
+        <div class="details">
+          <details class="right">
+            <summary class="created_at">
+              <%= raw  t "details.created_at", :at => time_ago_in_words(@topic.created_at.to_time) %>
+            </summary>
+
+            <%= render :partial => "users/user", :locals => { :user => @topic.user } %>
+          </details>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+
+

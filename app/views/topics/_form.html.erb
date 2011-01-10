@@ -1,0 +1,57 @@
+<% content_for :head do %>
+  <%= javascript_include_tag  ["/tiny_mce/jquery.tinymce.js"] %>
+  <script>
+    $(function(){
+      // Counter
+      update_counter();
+      $('#topic_title').keyup(update_counter);
+      $('#topic_title').keydown(update_counter);
+      function update_counter(){
+        $('#title_counter').text(101 - $('#topic_title').val().length);
+      }
+      add_tinymce_to('#topic_body');
+    })
+  </script>
+<% end %>
+<%= form_for(@topic) do |f| %>
+  <% if @topic.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@topic.errors.count, "error") %> prohibited this topic from being saved:</h2>
+
+      <ul>
+        <% @topic.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="clear"></div>
+
+  <!--  <fieldset class="">
+      <legend><-%= t('topic.form.legend') %></legend>-->
+  <div class="field">
+    <%= f.text_field  :title,
+      :title  => t('topic.form.field.title.hint'),
+      :class  => "width_10",
+      :maxlength => "101",
+      :disabled => (!@topic.new_record?) %>
+    <span id="title_counter" class="field_counter">101</span>
+  </div>
+
+  <div class="field">
+
+    <%= f.text_area   :body,
+      :title=> t('topic.form.field.body.hint'),
+      :class  => "width_11"
+    #:style => "width:90%;"
+    %>
+  </div>
+
+  <div class="field actions width_11">
+    <%= f.submit  t('topic.form.save.label'),
+      :title =>  t('topic.form.save.hint'),
+      :class => "save_button" %>
+  </div>
+  <!--/fieldset-->
+<% end %>

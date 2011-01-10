@@ -1,0 +1,26 @@
+
+<nav class="filters">
+  <%= render "topics/filters/search" %>
+  <ul>
+    <li class="<%= "active" if current_page?(:order => "new") %>">
+      <a href="<%= current_page :order => "new", :page => 1 %>" title="<%= t ('filters.new.hint') %>">
+        <%= t ('filters.new.title') %>
+      </a>
+    </li>
+    <li class="<%= "active" if current_page?(:order => "hot") %>">
+      <a href="<%= current_page :order => "hot", :page => 1 %>" title="<%= t ('filters.hot.hint') %>">
+        <%= t ('filters.hot.title') %>
+      </a>
+    </li>
+    <li class="<%= "active" if current_page?(:order => "votes") %>">
+      <a href="<%= current_page :order => "votes", :page => 1 %>" title="<%= t ('filters.votes.hint') %>">
+        <%= t ('filters.votes.title') %>
+      </a>
+    </li>
+    <li class="<%= "active" if current_page?(:order => "unanswered") %>">
+      <a href="<%= current_page :order => "unanswered", :page => 1 %>" title="<%= t ('filters.unaswered.hint') %>">
+        <%= t ('filters.unaswered.title') %>
+      </a>
+    </li>
+  </ul>
+</nav>

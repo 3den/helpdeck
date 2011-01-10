@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset=utf-8>
+<title>52Framework -- brought to you by the enavu network - Angel Grablev</title>
+<meta name="keywords" content="keywords, here" />
+<meta name="description" content="your description here" />
+
+<script src="js/modernizr-1.1.min.js"></script><!-- this is the javascript allowing html5 to run in older browsers -->
+<!--[if IE]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
+
+<!-- Canvas example taken from https://developer.mozilla.org/en/Canvas_tutorial/Basic_usage -->
+<script>
+	function draw() {
+      var canvas = document.getElementById("b");
+      if (canvas.getContext) {
+        var ctx = canvas.getContext("2d");
+
+        ctx.fillStyle = "rgb(200,0,0)";
+        ctx.fillRect (10, 10, 55, 50);
+
+        ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+        ctx.fillRect (30, 30, 55, 50);
+      }
+	  var canvas = document.getElementById("c");
+      if (canvas.getContext) {
+        var ctx = canvas.getContext("3d");
+
+        ctx.fillStyle = "rgb(100,0,0)";
+        ctx.fillRect (10, 10, 55, 50);
+
+        ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+        ctx.fillRect (30, 30, 55, 50);
+      }
+    }
+</script>
+
+<link rel="stylesheet" type="text/css" href="css/reset.css" media="screen" title="html5doctor.com Reset Stylesheet" />
+<link rel="stylesheet" type="text/css" href="css/css3.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/general.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/grid.css" media="screen" />
+
+<style>
+/* Feel free to remove these styles, they are for demo page */
+
+header {height:112px; position:relative; margin-bottom:5px;}
+	header .logo {font-size:2.5em; height:52px; padding-top:28px; font-weight:700; text-shadow:1px 1px 2px #000; color:#fff; filter: Shadow(Color=#666666, Direction=135, Strength=3);}
+	header .statement {width:20%; text-align:right; padding-top:30px;}
+header nav { background-color:#525252; color:#fff; height:30px;}
+	nav ul {list-style:none;}
+	nav ul li {float:left; margin-left:5px;}
+	nav ul li a {display:block; color:#fff; text-decoration:none; padding:2px 8px; margin-top:8px;  
+					-moz-border-radius-topleft: 5px; -webkit-border-top-left-radius: 5px; -moz-border-radius-topright: 5px; -webkit-border-top-right-radius: 5px;}
+	nav ul li a:hover, nav ul li.active a {background-color:#fff; color:#000;}
+aside {min-height:525px;}	
+
+	.submit, .submit:visited {
+		background: #525252; 
+		display: inline-block; 
+		padding: 5px 10px 6px; 
+		color: #fff; 
+		-moz-border-radius: 5px; 
+		-webkit-border-radius: 5px;
+		box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+		-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+		-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+		border:none;
+		text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+		position: relative;
+		cursor: pointer;
+		margin-bottom:5px;
+	}
+
+footer { font-size:.8em; } 
+</style>
+</head>
+<body  onload="draw();">
+<div class="row">
+    <header>
+        <div class="logo left">52framework</div>
+        
+        <div class="statement right">The framework from the future!</div>
+        
+        <div class="clear"></div>
+        
+        <nav>
+        	<ul>
+            	<li><a href="/">Home</a></li>
+                <li><a href="css3.html">CSS3</a></li>
+                <li class="active"><a href="canvas.html">Canvas</a></li>
+                <li><a href="http://52framework.com/documentation">Documentation</a></li>
+                <li><a href="http://52framework.com/about">About</a></li>
+                <li><a href="http://enavu.com">enavu</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="clear"></div>
+    
+    <div class="content col_16 col">
+        <article>
+            <h1>Canvas Demos</h1>
+            <blockquote class="right">52framework supplies a canvas js library that enables it to work in older browsers.</blockquote>
+            <p>Checkout some cool canvas demos.</p>
+        </article>  
+        
+        
+        <article>
+        	<h2>Canvas</h2>
+        	<canvas id="b" width="90" height="90"></canvas>
+            <canvas>
+            <script>
+            buildSpinner({ x : 50, y : 50, size : 20, degrees : 30 });
+
+			function buildSpinner(data) {
+			  
+			  var canvas = document.createElement('canvas');
+			  canvas.height = 100;
+			  canvas.width = 300;
+			  document.getElementsByTagName('article')[1].appendChild(canvas);
+			  var ctx = canvas.getContext("2d"),
+				i = 0, degrees = data.degrees, loops = 0, degreesList = [];
+				
+			  for (i = 0; i < degrees; i++) {
+				degreesList.push(i);
+			  }
+			  
+			  // reset
+			  i = 0;
+			  
+			  // so I can kill it later
+			  window.canvasTimer = setInterval(draw, 1000/degrees);  
+			
+			  function reset() {
+				ctx.clearRect(0,0,100,100); // clear canvas
+				
+				var left = degreesList.slice(0, 1);
+				var right = degreesList.slice(1, degreesList.length);
+				degreesList = right.concat(left);
+			  }
+			  
+			  function draw() {
+				var c, s, e;
+			
+				var d = 0;
+			
+				if (i == 0) {
+				  reset();
+				}
+			
+				ctx.save();
+			
+				d = degreesList[i];
+				c = Math.floor(255/degrees*i);
+				ctx.strokeStyle = 'rgb(' + c + ', ' + c + ', ' + c + ')';
+				ctx.lineWidth = data.size;
+				ctx.beginPath();
+				s = Math.floor(360/degrees*(d));
+				e = Math.floor(360/degrees*(d+1)) - 1;
+			
+				ctx.arc(data.x, data.y, data.size, (Math.PI/180)*s, (Math.PI/180)*e, false);
+				ctx.stroke();
+			
+				ctx.restore();
+			
+				i++;
+				if (i >= degrees) {
+				  i = 0;
+				}
+			  }  
+			}
+			</script>
+        </article>
+  </div><!-- end content -->
+  <div class="clear" style="height:10px; border-bottom:1px solid #ccc;"></div>
+</div><!-- end wrap -->
+<footer class="row">
+    <section class="col_8 col align_left">
+    All rights reserved 52framework owned by <a href="http://enavu.com">enavu network</a>
+    </section>
+    <section class="col_8 col align_right">
+    Have questions? Contact me at angel@enavu.com | Even if it's just to say thanks!
+    </section>
+</footer>
+</body>
+</html>

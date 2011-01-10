@@ -1,0 +1,25 @@
+<table class="topics_table">
+  <tbody>
+    <% @topics.each do |topic| %>
+      <tr>
+        <td class="topic_title">
+          <h2><%= link_to topic.title, topic %><a name="t<%= topic.id %>"></a></h2>
+          <details>
+          <%= raw t 'details.created_by_at',
+            :by => topic.user.username,
+            :at => time_ago_in_words(topic.created_at.to_time) %>
+          </deteils>
+        </td>
+
+        <td class="col_1 stats votes">
+          <big><%= topic.total_votes %></big>
+          <small><%= t('stats.votes') %></small>
+        </td>
+        <td class="col_1 stats comments">
+          <big><%= topic.total_comments %></big>
+          <small><%= t('stats.comments') %></small>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+</table>

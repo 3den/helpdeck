@@ -1,0 +1,20 @@
+//<script>
+var selector = "#comment_<%= @comment.id %>";
+var votes = $(selector +" .votes");
+
+<% if @vote %>
+    var msg = "<%= flash[:success] %>";
+ 
+    votes.find(".user_votes").html("<%= @comment.user.total_votes %>");
+    votes.find(".topic_votes").html("<%= @comment.total_votes %>");
+    votes.effect("highlight");
+
+    ajaxMessage(msg, 'success');
+<% else %>
+    var msg = "<%= flash[:alert] %>";
+    votes.effect("bounce", {direction:"left", distance:"10"}, "fast");
+
+    ajaxMessage(msg, 'alert');
+<% end %>
+//</script>
+<% flash.discard %>

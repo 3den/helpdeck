@@ -1,0 +1,176 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+br:
+  mainmenu:
+    new_topic:
+      link: "<b>Perguntar!</b>"
+      hint: "Você pergunte e seus amigos respondem!"
+    topics:
+      title: "Perguntas"
+      from_me:
+        link: "<b>Minhas</b>"
+        hint: "Todas as suas perguntas!"
+      from_friends:
+        link: "Dos meus <b>amigos</b>"
+        hint: "Ajude seus amigos!"
+      from_everybody:
+        link: "De <b>todo mundo</b>"
+        hint: "Search for questions to find the answers!"
+
+  filters:
+    search: "Search"
+    unaswered:
+      title: "Unaswered"
+      hint: "Show the questions with less anwsers first."
+    hot:
+      title: "Hot"
+      hint: "Show the MOST POPULAR questions first."
+    new:
+      title: "Newest"
+      hint: "Show the NEWEST questions first."
+    votes:
+      title: "Votes"
+      hint: "Show the HIGHEST RATED questions first."
+    old:
+      title: "Oldest"
+      hint: "Show the OLDEST questions first."
+
+  # Details
+  details:
+    created_by_at: "Posted <b>%{at} ago</b>, by \
+    <a href=\"/%{by}/q/\">@%{by}</a>."
+    created_at: "%{at} ago."
+    votes: "<b class='topic_votes'>%{x}</b> Votes."
+    views: "<b class='topic_views'>%{x}</b> Views."
+
+  stats:
+    votes: "Votes"
+    views: "views"
+    comments: "Answers"
+
+  # Actions
+  action:
+    new:
+      title: "New"
+      hint: "New item."
+    edit:
+      title: "Edit"
+      hint: "Edit item."
+    delete:
+      title: "Delete"
+      hint: "Delete item."
+    vote:
+      title: "Vote!"
+      up:
+        title: "&uArr;"
+        hint: "Like it? Vote it up!"
+      down:
+        title: "&dArr;"
+        hint: "Hate it? Vote it down!"
+    save: "Save!"
+
+
+  votes:
+    title: "Votes"
+    save:
+      success: "Thanks for voting!"
+      warning: "You have already voted."
+
+  page:
+    home: "Welcome to #helpdeck!"
+
+  user:
+    sign_in:
+      title: "Login"
+      twitter:
+        link: "Login with Twitter"
+        hint: "Sign in with twitter"
+      success: "Your are signed in!"
+      error: "Twitter login bugged."
+    sign_out:
+      title: "Logout"
+      success: "Your are signed out!"
+      error: "An error ocurred."
+    access:
+      denied: "Access denied, please login first."
+
+  topic:
+    new:
+      title: "New Question"
+    edit:
+      title: "Edit Question"
+      link: "Edit"
+      hint: "Edit current question."
+    not_found: "That item does not exist. It may have been deleted by the owner."
+    update:
+      success: "Question successfully updated."
+    create:
+      success: "Question successfully posted."
+    delete:
+      confirm: "Are you sure you want to delete this question?"
+      success: "Question successfully deleted."
+    form:
+      legend: "Question"
+      save:
+        label: "Save!"
+        hint: "Save my question."
+      field:
+        title:
+          label: "Question"
+          hint: "You can use #tags and referece @people here."
+        body:
+          label: "Description"
+          hint: "Give a full description of your question."
+
+  topics:
+    title: "Topics"
+    search:
+      no_items: "Sorry, but nothing matched your search criteria. Please try again with some different keywords."
+    all:
+      title: "All Questions"
+    from:
+      user:
+        no_items: "@%{username} haven't asked yet.<br />
+        <a class='new' href='/q/new/?topic[title]=@%{username}'>Ask a question to @%{username}!</a>"
+        title: "Questions from %{user}"
+        error:
+          not_found: "User \"%{user}\" could not be found."
+      friends:
+        title: "Questions from my friends"
+        no_items: "Your friends haven't asked questions yet.<br />
+        <a class='new' href='/q/new/'>Ask then why :)</a>"
+      me:
+        title: "My Questions"
+        no_items: "You haven't asked yet.<br />
+        <a class='new' href='/q/new/'>But, you can <b>ask</b> your first question ;)</a>"
+
+
+  comment:
+    create:
+      success: "Answer successfully posted."
+      error: "The answer could not be saved, please try again."
+    delete:
+      confirm: "Are you sure you want to delete this answer?"
+      success: "Answer successfully deleted."
+    form:
+      login:
+        title: '<a href="/auth/twitter">Sign in</a> to Answer'
+      title: "Your Answer"
+      legend: "Question"
+      save:
+        label: "Save!"
+        hint: "Save my answer."
+      field:
+        body:
+          hint: "You can use twitter #tags and reference @people.s"
+  comments:
+    title: '<b class="topic_comments">%{x}</b> Answers'
+
+
+  activerecord:
+    attributes:
+      comment:
+        body: "The first 42 characters will be published on twitter"
+      topic:
+        title: "The first 101 characters will be published on twitter"

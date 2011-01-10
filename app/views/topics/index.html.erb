@@ -1,0 +1,18 @@
+<% content_for :head do %>
+    <%= rss_link_tag %>
+<% end %>
+
+<div id="filters">
+  <%= render "topics/filters/filters" %>
+</div>
+
+<div id="topics" class="topics">
+  <%= render "topics/table" %>
+  <% if @topics.empty? %>
+    <blockquote><%= t('topics.search.no_items') %></blockquote>
+  <% else %>
+    
+  <% end %>
+</div>
+
+<%= pagination(@pagination, t('topics.title')) %>
