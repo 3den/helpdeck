@@ -1,14 +1,11 @@
 Helpdeck::Application.routes.draw do
 
   # topics
-  resources :q, :controller => :topics, :as => :topics do
-    resources :comments 
-  end
   get   "/q/:id(/a/:comment_id)(.:format)"  => "topics#show", :as => :topic
   get   "/friends/q(.:format)"    => "topics#from_friends", :as => :friends_topics
   get   "/my/q(.:format)"         => "topics#from_me", :as => :my_topics
   get   "/:user/q(.:format)"      => "topics#from", :as => :user_topics
-
+  
   #votes
   put "/q/:id/vote/:vote"  => "topics#vote", :as => :vote_topic
   put "/a/:id/vote/:vote"  => "comments#vote", :as => :vote_comment
@@ -17,6 +14,11 @@ Helpdeck::Application.routes.draw do
   match   "/auth/:provider" => "session#new", :as => :login
   match   "/logout" => "session#destroy", :as => :logout
   match   "/auth/:provider/callback" => "session#create", :as => :callback
+
+  # resources
+  resources :q, :controller => :topics, :as => :topics do
+    resources :a, :controller => :comments, :as => :comments
+  end
 
   # root_url
   root :to => "topics#index"
