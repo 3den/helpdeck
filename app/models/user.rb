@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
       data.delete(:uid)
       user.update_attributes(data)
     else
-      user = create!(data)
+      user = self.create!(data)
     end   
     user
   end
