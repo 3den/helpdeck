@@ -51,7 +51,6 @@ ActiveRecord::Schema.define(:version => 20110108203657) do
 
   create_table "users", :force => true do |t|
     t.string   "provider"
-    t.string   "index"
     t.string   "uid"
     t.string   "token"
     t.string   "secret"
@@ -70,10 +69,14 @@ ActiveRecord::Schema.define(:version => 20110108203657) do
   end
 
   add_index "users", ["is_admin"], :name => "index_users_on_is_admin"
+  add_index "users", ["provider", "uid"], :name => "index_users_on_provider_and_uid", :unique => true
+  add_index "users", ["secret"], :name => "index_users_on_secret"
   add_index "users", ["state"], :name => "index_users_on_state"
+  add_index "users", ["token"], :name => "index_users_on_token"
   add_index "users", ["total_comments"], :name => "index_users_on_total_comments"
   add_index "users", ["total_topics"], :name => "index_users_on_total_topics"
   add_index "users", ["total_votes"], :name => "index_users_on_total_votes"
+  add_index "users", ["username"], :name => "index_users_on_username"
 
   create_table "votes", :force => true do |t|
     t.integer  "user_id"
