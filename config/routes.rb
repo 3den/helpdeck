@@ -6,6 +6,7 @@ Helpdeck::Application.routes.draw do
   end
   # topics
   get   "/q/:id(/a/:comment_id)(.:format)"  => "topics#show", :as => :topic
+  get   "/q(.:format)"            => "topics#index", :as => :topics
   get   "/friends/q(.:format)"    => "topics#from_friends", :as => :friends_topics
   get   "/my/q(.:format)"         => "topics#from_me", :as => :my_topics
   get   "/:user/q(.:format)"      => "topics#from", :as => :user_topics
