@@ -7,7 +7,7 @@
   </script>
 <% end %>
 
-<%= form_for([comment.topic, comment], :remote => true) do |f| %>
+<%= form_for([comment.topic, comment]) do |f| %>
   <div class="field description">
     <%= f.label :body %>
     <%= f.text_area :body,
