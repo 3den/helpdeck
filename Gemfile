@@ -1,7 +1,6 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.3'
-#gem 'rails', '2.3.9'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -11,6 +10,7 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 gem "oauth"
 #gem 'omniauth'#, :path => './vendor/gems/omniauth'
 gem 'twitter'#, :path => './vendor/gems/twitter'
+
 #gem 'will_paginate', :path => './vendor/gems/will_paginate'
 
 # Use unicorn as the web server
