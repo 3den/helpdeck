@@ -45,7 +45,7 @@ class ApplicationController < ActionController::Base
     user ||= current_user
     return (item.user == user) if user
   end
-
+  
   #update Status
   def update_status(item, url="")
     msg = "#{item.status} #{url}" if url
