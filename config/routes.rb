@@ -1,5 +1,5 @@
 Helpdeck::Application.routes.draw do
-  match "*:path" => redirect("http://helpdeck.3den.org/%{path}")
+  match "*path" => redirect("http://helpdeck.3den.org/%{path}")
 
   # resources
   resources :topics, :only => [:create, :destroy, :update, :new, :edit] do
