@@ -1,5 +1,9 @@
 Helpdeck::Application.routes.draw do
 
+  # resources
+  resources :topics, :only => [:create, :destroy, :update, :new, :edit] do
+    resources :comments, :only => [:create, :destroy]
+  end
   # topics
   get   "/q/:id(/a/:comment_id)(.:format)"  => "topics#show", :as => :topic
   get   "/friends/q(.:format)"    => "topics#from_friends", :as => :friends_topics
@@ -14,11 +18,6 @@ Helpdeck::Application.routes.draw do
   match   "/auth/:provider" => "session#new", :as => :login
   match   "/logout" => "session#destroy", :as => :logout
   match   "/auth/:provider/callback" => "session#create", :as => :callback
-
-  # resources
-  resources :q, :controller => :topics, :as => :topics do
-    resources :a, :controller => :comments, :as => :comments
-  end
 
   # root_url
   root :to => "topics#index"
