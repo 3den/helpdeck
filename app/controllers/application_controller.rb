@@ -30,9 +30,9 @@ class ApplicationController < ActionController::Base
   # Twitter config
   def twitter_user
     @tw_user ||= Twitter::Client.new(
-      :oauth_token => session['token'],
-      :oauth_token_secret => session['secret']
-    ) if session['token']
+      :oauth_token => session[:token],
+      :oauth_token_secret => session[:secret]
+    ) if session[:token]
   end
 
   # is admin
@@ -50,8 +50,8 @@ class ApplicationController < ActionController::Base
   def update_status(item, url="")
     msg = "#{item.status} #{url}" if url
     begin
-      status = twitter_user.update(msg, :trim_user => true)
-    rescue Exception => e
+      status = twitter_user.update(msg[0..140], :trim_user => true)
+    rescue
       return nil
     else
       item.update_attribute(:status_id, status.id)

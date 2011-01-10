@@ -121,7 +121,7 @@ class TopicsController < ApplicationController
       if @topic.save
         update_status(@topic, topic_url(@topic.id))
         flash[:success] = t('topic.create.success')
-        format.html { redirect_to(@topic) }
+        format.html { redirect_to @topic }
         format.xml  { render :xml => @topic, :status => :created, :location => @topic }
       else
         format.html { render :action => "new" }

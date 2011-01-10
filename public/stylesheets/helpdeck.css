@@ -299,6 +299,7 @@ a.sign_in_with_twitter:hover .sprite{
     padding-left: 35px;
 }
 .mainmenu a:hover{
+    text-decoration: none;
     border-right: 5px #FF6666 solid;
     color: #000;
 }

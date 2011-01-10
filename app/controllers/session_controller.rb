@@ -3,8 +3,8 @@ class SessionController < ApplicationController
   #login
   def new
     request_token = oauth_consumer.get_request_token(:oauth_callback => callback_url)
-    session['token'] = request_token.token
-    session['secret'] = request_token.secret
+    session[:token] = request_token.token
+    session[:secret] = request_token.secret
     redirect_to request_token.authorize_url
   end
 
@@ -43,10 +43,10 @@ class SessionController < ApplicationController
 
   private
   def oauth_data
-    request_token = OAuth::RequestToken.new(oauth_consumer, session['token'], session['secret'])
+    request_token = OAuth::RequestToken.new(oauth_consumer, session[:token], session[:secret])
     access_token = request_token.get_access_token(:oauth_verifier => params[:oauth_verifier])
-    session['token'] = access_token.token
-    session['secret'] = access_token.secret
+    session[:token] = access_token.token
+    session[:secret] = access_token.secret
     user = twitter_user.verify_credentials
     return {
       :provider => params[:provider],
