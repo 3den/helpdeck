@@ -1,4 +1,5 @@
 Helpdeck::Application.routes.draw do
+  match "/(*:path)" => redirect("http://helpdeck.3den.org/%{path}")
 
   # resources
   resources :topics, :only => [:create, :destroy, :update, :new, :edit] do
@@ -21,7 +22,7 @@ Helpdeck::Application.routes.draw do
   match   "/auth/:provider/callback" => "session#create", :as => :callback
 
   # root_url
-  root :to => "topics#index"
+  root :to => redirect("http://helpdeck.3den.org/%{path}")
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
