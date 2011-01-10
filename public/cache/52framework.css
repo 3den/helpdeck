@@ -101,7 +101,6 @@ input, select {
 }
 
 
-@charset "utf-8";
 /* CSS3 52framework */
 
 /* 
@@ -140,7 +139,6 @@ input, select {
 .gradient {background: -moz-linear-gradient(center bottom , rgb(209, 209, 209) 14%, rgb(230, 230, 230) 57%, rgb(224, 224, 224) 91%) repeat scroll 0% 0% transparent;
 }
 
-@charset "utf-8";
 /* 52framework General StyleSheet - contains styles for all the HTML elements this framework supports */
 
 body {
@@ -235,7 +233,6 @@ pre 			{	margin:1.5em 0;white-space:pre;}
 
 
 
-@charset "utf-8";
 /* 52framework grid
 
 16 cols by 60px, with an 10px gutter
