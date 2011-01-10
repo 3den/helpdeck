@@ -85,7 +85,7 @@ class SessionController < ApplicationController
     @oauth_consumer ||= OAuth::Consumer.new(
       TWITTER_CONSUMER_KEY,
       TWITTER_CONSUMER_SECRET,
-      :site => 'http://api.twitter.com',
+      :site => ENV['APIGEE_TWITTER_API_ENDPOINT'],
       :authorize_path => "/oauth/authenticate",
       :oauth_version => "1.0a",
       :scheme => :header
