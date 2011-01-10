@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
     @comment.user = current_user
 
     if @comment.save
-      #update_status(@comment, topic_url(@topic.id, @comment.id))
+      update_status(@comment, topic_url(@topic.id, @comment.id))
       flash[:success] = t('comment.create.success')
     else
       flash[:alert] = t('comment.create.error')
