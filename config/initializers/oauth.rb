@@ -17,6 +17,6 @@
 Twitter.configure do |config|
   config.consumer_key     = TWITTER_CONSUMER_KEY
   config.consumer_secret  = TWITTER_CONSUMER_SECRET
-  config.endpoint         = APIGEE_TWITTER_API_ENDPOINT
-  config.search_endpoint  = APIGEE_TWITTER_SEARCH_API_ENDPOINT
+  config.endpoint         = ENV['APIGEE_TWITTER_API_ENDPOINT']
+  config.search_endpoint  = ENV['APIGEE_TWITTER_SEARCH_API_ENDPOINT']
 end
