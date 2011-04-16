@@ -21,11 +21,3 @@ Twitter.configure do |config|
   config.consumer_key     = OAUTH_CONSUMER[:twitter][:key]
   config.consumer_secret  = OAUTH_CONSUMER[:twitter][:secret]
 end
-
-# APIGEE Config
-Twitter.configure do |config|
-  config.consumer_key     = OAUTH_CONSUMER[:twitter][:key]
-  config.consumer_secret  = OAUTH_CONSUMER[:twitter][:secret]
-  config.endpoint         = ENV['APIGEE_TWITTER_API_ENDPOINT']
-  config.search_endpoint  = ENV['APIGEE_TWITTER_SEARCH_API_ENDPOINT']
-end
