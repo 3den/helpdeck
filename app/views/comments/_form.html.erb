@@ -1,22 +1,29 @@
 <% content_for :head do %>
-  <%= javascript_include_tag  ["/tiny_mce/jquery.tinymce.js"] %>
-  <script>
-    $(function(){
-      add_tinymce_to('#comment_body');
-    });
-  </script>
+  <% if current_user %>
+    <%= javascript_include_tag  ["/tiny_mce/jquery.tinymce.js"] %>
+    <script>
+      $(function(){
+        add_tinymce_to('#comment_body');
+      });
+    </script>
+  <% end %>
 <% end %>
 
 <%= form_for([comment.topic, comment], :remote => true) do |f| %>
   <div class="field description">
     <%= f.label :body %>
     <%= f.text_area :body,
+      :disabled => (!current_user),
       :title=> t('comment.form.field.body.hint') %>
   </div>
 
   <div class="actions">
-    <%= f.submit  t('action.save'),
-      :title =>  t('comment.form.save.hint'),
-      :class => "save_button" %>
+    <% if current_user %>
+      <%= f.submit  t('action.save'),
+        :title =>  t('comment.form.save.hint'),
+        :class => "save_button" %>
+    <% else %>
+      <%= render 'users/login/login' %>
+    <% end %>
   </div>
 <% end %>

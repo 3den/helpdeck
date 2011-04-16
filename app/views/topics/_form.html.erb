@@ -31,6 +31,7 @@
   <!--  <fieldset class="">
       <legend><-%= t('topic.form.legend') %></legend>-->
   <div class="field">
+    <%= f.label :title %>
     <%= f.text_field  :title,
       :title  => t('topic.form.field.title.hint'),
       :class  => "width_10",
@@ -40,7 +41,7 @@
   </div>
 
   <div class="field">
-
+    <%= f.label :body %>
     <%= f.text_area   :body,
       :title=> t('topic.form.field.body.hint'),
       :class  => "width_11"

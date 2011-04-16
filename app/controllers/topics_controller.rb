@@ -1,5 +1,5 @@
 class TopicsController < ApplicationController
-  
+
   # before filter
   before_filter :filter_access
 
@@ -36,7 +36,7 @@ class TopicsController < ApplicationController
     ).paginate(page, page_limit)
     @pagination = Topic.pagination
     @title = t('topics.from.friends.title')
-    
+
     return render_error t('topics.from.friends.no_items') if no_items?
     respond_to_index
   end
@@ -63,12 +63,12 @@ class TopicsController < ApplicationController
     ).paginate(page, page_limit)
     @pagination = Topic.pagination
     @title = t('topics.all.title')
-    
+
     return render_error t('topics.from.me.no_items') if no_items?
     respond_to_index
   end
 
-  
+
   # GET /topics/1
   # GET /topics/1.xml
   def show
@@ -105,7 +105,7 @@ class TopicsController < ApplicationController
 
   # GET /topics/1/edit
   def edit
-    @title = t('topic.edit.title')   
+    @title = t('topic.edit.title')
   end
 
   # POST /topics
@@ -121,7 +121,7 @@ class TopicsController < ApplicationController
       if @topic.save
         update_status(@topic, topic_url(@topic.id))
         flash[:success] = t('topic.create.success')
-        format.html { redirect_to @topic }
+        format.html { redirect_to topic_url(@topic.id) }
         format.xml  { render :xml => @topic, :status => :created, :location => @topic }
       else
         format.html { render :action => "new" }
@@ -138,7 +138,7 @@ class TopicsController < ApplicationController
     respond_to do |format|
       if @topic.update_attributes(attrs)
         flash[:success] = t('topic.update.success')
-        format.html { redirect_to(@topic) }
+        format.html { redirect_to topic_url(@topic.id) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -151,7 +151,7 @@ class TopicsController < ApplicationController
   # DELETE /topics/1.xml
   def destroy
     @topic.destroy
-    
+
     flash[:success] = t('topic.delete.success')
     respond_to do |format|
       format.html { redirect_to(topics_url) }
@@ -170,9 +170,9 @@ class TopicsController < ApplicationController
     else
       flash[:alert] = t("votes.save.warning")
     end
-  
+
     respond_to do |format|
-      format.html { redirect_to(@topic) }
+      format.html { redirect_to topic_url(@topic) }
       format.xml  { head :ok }
       format.js
     end
@@ -184,10 +184,10 @@ class TopicsController < ApplicationController
     if params[:order]
       cookies[:topics_order] = params[:order]
     else
-      params[:order] = cookies[:topics_order] || "unanswered"
+      params[:order] = cookies[:topics_order] || "new"
     end
   end
-  
+
   def comments_order
     if params[:order]
       cookies[:comments_order] = params[:order]

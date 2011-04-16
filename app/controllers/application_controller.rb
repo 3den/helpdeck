@@ -3,7 +3,9 @@ class ApplicationController < ActionController::Base
   helper_method [:current_user, :is_admin?, :is_owner?]
   before_filter :set_locale
 
+  #
   # Set locale
+  #
   def set_locale
     lang = current_user.lang if current_user
     case lang
@@ -30,9 +32,9 @@ class ApplicationController < ActionController::Base
   # Twitter config
   def twitter_user
     @tw_user ||= Twitter::Client.new(
-      :oauth_token => session[:token],
-      :oauth_token_secret => session[:secret]
-    ) if session[:token]
+      :oauth_token => current_user.token,
+      :oauth_token_secret => current_user.secret
+    ) if current_user
   end
 
   # is admin
@@ -48,13 +50,11 @@ class ApplicationController < ActionController::Base
   
   #update Status
   def update_status(item, url="")
-    msg = "#{item.status} #{url}" if url
     begin
+      msg = "#{item.status} #{url}" if url
       status = twitter_user.update(msg[0..140], :trim_user => true)
     rescue
       return nil
-    else
-      item.update_attribute(:status_id, status.id)
     end
   end
 
@@ -69,7 +69,6 @@ class ApplicationController < ActionController::Base
       redirect_to redirect
     end 
   end
-
 
   #
   # Render Error

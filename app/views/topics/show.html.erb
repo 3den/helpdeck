@@ -71,7 +71,6 @@
                 :confirm => t('topic.delete.confirm'),
                 :class => "action delete",
                 :title => t('action.delete.hint') %>
-
           <% end %>
         </div>
       </td>
@@ -91,18 +90,8 @@
   </div>
 
   <div class="comment_form">
-    <% if (current_user) %>
-      <h3><%= t 'comment.form.title' %></h3>
-      <%= render_comment_form(@topic) %>
-    <% else %>
-      <b><%= raw t 'comment.form.login.title' %></b>
-      <p>
-        <a href="<%= login_path "twitter" %>" class="sign_in_with_twitter" title="<%= t('user.sign_in.twitter.hint') %>">
-          <img class="sprite" src="/images/blank.png"
-               alt="<%= t('user.sign_in.twitter.hint') %>" />
-        </a>
-      </p>
-    <% end %>
+    <h3><%= t 'comment.form.title' %></h3>
+    <%= render_comment_form(@topic) %>
   </div>
 
   <%= pagination(@pagination, t('stats.comments')) %>

@@ -8,11 +8,6 @@
 
 <div id="topics" class="topics">
   <%= render "topics/table" %>
-  <% if @topics.empty? %>
-    <blockquote><%= t('topics.search.no_items') %></blockquote>
-  <% else %>
-    
-  <% end %>
 </div>
 
 <%= pagination(@pagination, t('topics.title')) %>

@@ -15,23 +15,23 @@ class CommentsController < ApplicationController
       flash[:alert] = t('comment.create.error')
     end
 
-    respond_to do |format|   
-        format.html { redirect_to @topic }
-        format.xml  { render :xml => @comment, :status => :created, :location => @comment }
-        format.js
+    respond_to do |format|
+      format.js
+      format.html { redirect_to topic_url(@topic.id, @comment.id) }
+      format.xml  { render :xml => @comment, :status => :created, :location => @comment }
     end
   end
 
   # DELETE /comments/1
   # DELETE /comments/1.xml
-  def destroy  
+  def destroy
     @id = @comment.id;
-    @topic = @comment.topic   
+    @topic = @comment.topic
     @comment.destroy
 
     flash[:success] = t('comment.delete.success')
     respond_to do |format|
-      format.html { redirect_to(@topic) }
+      format.html { redirect_to topic_url(@topic.id) }
       format.xml  { head :ok }
       format.js
     end
@@ -50,7 +50,7 @@ class CommentsController < ApplicationController
     end
 
     respond_to do |format|
-      format.html { redirect_to(@comment.topic) }
+      format.html { redirect_to topic_url(@topic.id, @topic.comment.id) }
       format.xml  { head :ok }
       format.js
     end

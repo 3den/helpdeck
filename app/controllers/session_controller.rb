@@ -1,16 +1,8 @@
 class SessionController < ApplicationController
 
-  #login
-  def new
-    request_token = oauth_consumer.get_request_token(:oauth_callback => callback_url)
-    session[:token] = request_token.token
-    session[:secret] = request_token.secret
-    redirect_to request_token.authorize_url
-  end
-
   # Callback
   def create
-    data = oauth_data
+    data = omniauth_data
     #raise data.to_yaml #debug
     user = User.login_by_oauth(data)
     
@@ -18,6 +10,10 @@ class SessionController < ApplicationController
       #session[:oauth_debug] = data #debug
       session[:user_id] = user.id
       cookies.permanent[:user_id] = user.id
+
+      # TODO: Remove this
+      session[:token]   = data[:token]
+      session[:secret]  = data[:secret]
 
       # redirect
       if session[:back]
@@ -42,27 +38,6 @@ class SessionController < ApplicationController
   end
 
   private
-  def oauth_data
-    request_token = OAuth::RequestToken.new(oauth_consumer, session[:token], session[:secret])
-    access_token = request_token.get_access_token(:oauth_verifier => params[:oauth_verifier])
-    session[:token] = access_token.token
-    session[:secret] = access_token.secret
-    user = twitter_user.verify_credentials
-    return {
-      :provider => params[:provider],
-      :token    => access_token.token,
-      :secret   => access_token.secret,
-
-      :uid      => user.id,
-      :name     => user.name,
-      :username => user.screen_name,
-      :location => user.location,
-      :image    => user.profile_image_url,
-
-      :lang     => user.lang
-    }
-  end
-
   def omniauth_data
     data = request.env["omniauth.auth"]
     return {
@@ -80,15 +55,4 @@ class SessionController < ApplicationController
     }
   end
 
-  # OAuth
-  def oauth_consumer
-    @oauth_consumer ||= OAuth::Consumer.new(
-      TWITTER_CONSUMER_KEY,
-      TWITTER_CONSUMER_SECRET,
-      :site => 'http://api.twitter.com',
-      :authorize_path => "/oauth/authenticate",
-      :oauth_version => "1.0a",
-      :scheme => :header
-    )
-  end
 end

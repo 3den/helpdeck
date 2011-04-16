@@ -20,7 +20,7 @@ class Comment < ActiveRecord::Base
     if(topic.user != user)
       @status = "@#{topic.user.username} #{@status}"
     end
-    return @status
+    return "#{@status}..."
   end
 
   #
@@ -57,7 +57,7 @@ class Comment < ActiveRecord::Base
   # Paginate
   #
   def self.paginate(page, limit=5)
-    total_items = self.count
+    total_items = self.scoped.count
     @@pagination = {
       :page => page,
       :per_page => limit,

@@ -1,29 +1,19 @@
-
-development:
+# Drivers
+sqlite: &sqlite
   adapter: sqlite3
-  database: db/development.sqlite3
   pool: 5
   timeout: 5000
+
+# Databases
+development:
+  <<: *sqlite
+  database: db/development.sqlite3
 
 test:
-  adapter: sqlite3
+  <<: *sqlite
   database: db/test.sqlite3
-  pool: 5
-  timeout: 5000
 
 production:
-  adapter: sqlite3
+  <<: *sqlite
   database: db/production.sqlite3
-  pool: 5
-  timeout: 5000
-
-#productionX:
-#  adapter: mysql2
-#  encoding: utf8
-#  reconnect: true
-#  database: on3den_helpdeck
-#  pool: 5
-#  username: on3den_help
-#  password: sxPo0UffT3PW
-#  host: localhost
 

@@ -6,10 +6,10 @@ class Topic < ActiveRecord::Base
   # validation
   validates :title, :length => { :maximum => 101, :minimum => 3 }
   validates :user_id, :presence => true
-  
+
   # events
   before_save :clean_html
-  
+
   # Status
   def status
     @status ||= title
@@ -42,7 +42,7 @@ class Topic < ActiveRecord::Base
     when "unanswered"
       order = "total_comments ASC, id ASC"
     else
-      order = "total_comments ASC, id ASC"
+      order = "id DESC"
     end
 
     #conditions
@@ -59,14 +59,14 @@ class Topic < ActiveRecord::Base
   # Paginate
   #
   def self.paginate(page, limit=10)
-    total_items = self.count
+    total_items = self.scoped.count
     @@pagination = {
       :page => page,
       :per_page => limit,
       :total_pages => ((total_items -1) / limit) + 1,
       :total_items => total_items
     }
-    
+
     return self.limit(limit).offset((page - 1) * limit)
   end
 

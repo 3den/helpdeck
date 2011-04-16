@@ -173,6 +173,8 @@ en:
   activerecord:
     attributes:
       comment:
-        body: "The first 42 characters will be published on twitter"
+        body: "The first 42 characters will be published on your twitter"
       topic:
-        title: "The first 101 characters will be published on twitter"
+        title: "Title: This 101 characters will be published on your twitter"
+        body: "Description: Here you can give more details about your question"
+

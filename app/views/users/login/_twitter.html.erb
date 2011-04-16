@@ -2,7 +2,7 @@
 <% if current_user %>
   <%= render :partial => "users/login/user", :locals => {:user => current_user } %>
 <% else %>
-<a href="<%= login_path "twitter" %>" class="sign_in_with_twitter" title="<%= t('user.sign_in.twitter.hint') %>">
+<a href="/auth/twitter" class="sign_in_with_twitter" title="<%= t('user.sign_in.twitter.hint') %>">
   <img class="sprite" src="/images/blank.png"
        alt="<%= t('user.sign_in.twitter.hint') %>" />
 </a>
