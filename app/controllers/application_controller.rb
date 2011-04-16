@@ -54,7 +54,6 @@ class ApplicationController < ActionController::Base
       msg = "#{item.status} #{url}" if url
       twitter_user.update(msg[0..140], :trim_user => true)
     rescue
-      debugger
       return nil
     end
   end

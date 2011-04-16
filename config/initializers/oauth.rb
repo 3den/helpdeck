@@ -1,5 +1,5 @@
 # Setup the OAuth providers here
-OAUTH_PROVIDERS = {
+OAUTH_CONSUMER = {
   :twitter => {
     :key => "1pUA29lchvIhz4zPRNpM1w",
     :secret => "fgZHeNlBEXdx8vB65V8CIS03MOROleBe652OpGEI"
@@ -11,12 +11,18 @@ Rails.application.config.middleware.use OmniAuth::Builder do
 
   # Twitter provider
   provider  :twitter,
-            OAUTH_PROVIDERS[:twitter][:key],
-            OAUTH_PROVIDERS[:twitter][:secret]
+            OAUTH_CONSUMER[:twitter][:key],
+            OAUTH_CONSUMER[:twitter][:secret]
           
 end
 
-# This is for APIGEE
+# Twitter Gem Config
+Twitter.configure do |config|
+  config.consumer_key     = OAUTH_CONSUMER[:twitter][:key]
+  config.consumer_secret  = OAUTH_CONSUMER[:twitter][:secret]
+end
+
+# APIGEE Config
 #Twitter.configure do |config|
 #  config.consumer_key     = TWITTER_CONSUMER_KEY
 #  config.consumer_secret  = TWITTER_CONSUMER_SECRET
