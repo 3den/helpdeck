@@ -23,9 +23,9 @@ Twitter.configure do |config|
 end
 
 # APIGEE Config
-#Twitter.configure do |config|
-#  config.consumer_key     = TWITTER_CONSUMER_KEY
-#  config.consumer_secret  = TWITTER_CONSUMER_SECRET
-#  config.endpoint         = ENV['APIGEE_TWITTER_API_ENDPOINT']
-#  config.search_endpoint  = ENV['APIGEE_TWITTER_SEARCH_API_ENDPOINT']
-#end
+Twitter.configure do |config|
+  config.consumer_key     = OAUTH_CONSUMER[:twitter][:key]
+  config.consumer_secret  = OAUTH_CONSUMER[:twitter][:secret]
+  config.endpoint         = ENV['APIGEE_TWITTER_API_ENDPOINT']
+  config.search_endpoint  = ENV['APIGEE_TWITTER_SEARCH_API_ENDPOINT']
+end
