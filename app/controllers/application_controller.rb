@@ -52,8 +52,9 @@ class ApplicationController < ActionController::Base
   def update_status(item, url="")
     begin
       msg = "#{item.status} #{url}" if url
-      status = twitter_user.update(msg[0..140], :trim_user => true)
+      twitter_user.update(msg[0..140], :trim_user => true)
     rescue
+      debugger
       return nil
     end
   end
