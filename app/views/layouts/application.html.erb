@@ -2,18 +2,8 @@
 <html lang="ën">
   <head>
     <title>helpdeck<%= ": #{title}" if title %></title>
-
-    <!-- Framework -->
-    <%= javascript_include_tag ["/52framework/js/modernizr-1.1.min.js"] %>
-    <%= stylesheet_link_tag   ["/52framework/css/reset",
-      "/52framework/css/css3",
-      "/52framework/css/general",
-      "/52framework/css/grid"],
-      :cache => "/cache/52framework" %>
-    <!--[end] Framework -->
-
-    <%= stylesheet_link_tag :all %>
-    <%= javascript_include_tag :defaults %>
+    <%= include_stylesheets :framework, :application %>
+    <%= include_javascripts :framework, :application %>
     <link rel="shortcut icon" href="/images/favicon32.png" type="image/x-icon"/>
     <link rel="apple-itouch-icon" href="/images/favicon32.png" />
     <%= csrf_meta_tag %>
