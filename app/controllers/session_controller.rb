@@ -11,10 +11,6 @@ class SessionController < ApplicationController
       session[:user_id] = user.id
       cookies.permanent[:user_id] = user.id
 
-      # TODO: Remove this
-      session[:token]   = data[:token]
-      session[:secret]  = data[:secret]
-
       # redirect
       if session[:back]
         target = session[:back]
