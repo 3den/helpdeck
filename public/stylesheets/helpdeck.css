@@ -42,6 +42,20 @@ a:hover {
     text-decoration: underline;
 }
 
+h5 a, h2 a{
+   color: #FF6666;
+   font-weight: bold;
+   text-decoration: none;
+}
+h2 a:visited{
+   color: #EE6666;
+}
+h5 a:hover, h2 a:hover{
+   color: #FFF;
+   background: #FF6666;
+   text-decoration: none;
+}
+
 .sprite{
     padding: 0;
     border: none;
@@ -540,12 +554,6 @@ footer a:hover{
 .topics_table h2{
     font-size: 16px;
     font-weight: normal;
-}
-.topics_table h2 a{
-    text-decoration: none;
-}
-.topics_table h2 a:hover{
-    text-decoration: underline;
 }
 
 .topics_table .stats{
