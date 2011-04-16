@@ -15,7 +15,7 @@ stylesheets:
     - public/52framework/css/css3.css
     - public/52framework/css/general.css
     - public/52framework/css/grid.css
-  application:
     - public/stylesheets/css3-action-framework.css
+  application:
     - public/stylesheets/messages.css
     - public/stylesheets/helpdeck.css
