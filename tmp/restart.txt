@@ -1,0 +1,628 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt" lang="pt"><head>
+  <title>Jack Bauer (busklogin1) - Busk</title>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <meta name="description" content="Busk é um serviço para consumo personalizado de notícias. Descubra, leia, compartilhe e colecione conteúdo relevante sem perder tempo. Comece agora!">
+  <meta name="keywords" content="Novidades  busca  Search  engine  nova  new  ferramenta  rss  blogs  feeds  leitor  social  bookmark  amigo  salvar  indexa  buscador  fotos  vídeos  integra  completo  jovem  ajuda  alimento  doação  sites  enviar  notícias  agregador  socialnicework  fazer  bem  internet  notícias  conteúdo  blogueiros  jornal  diário  pessoal.">
+  <meta http-equiv="X-UA-Compatible" content="IE=8">
+  <link rel="apple-touch-icon-precomposed" href="/Volumes/WORK/ruby/rails/busk/public/images/new/apple-touch-icon-precomposed_ipad.png">
+  
+
+  <meta name="page" content="activities#index">
+
+  <link href="/Volumes/WORK/ruby/rails/busk/public/stylesheets/new/style.css?1302127728" media="screen" rel="stylesheet" type="text/css">
+  <script type="text/javascript">
+//<![CDATA[
+var AUTH_TOKEN = 'W3E3bopn/3ie1/t/OmXVyiryG5OlZth+HwmINRRUOFc=';var LOCALE = 'pt';var LOGGED = true;
+//]]>
+</script>
+  <script src="/Volumes/WORK/ruby/rails/busk/public/javascripts/new/jquery.js?1301407645" type="text/javascript"></script>
+<script src="/Volumes/WORK/ruby/rails/busk/public/javascripts/new/jquery.autoSuggest.js?1301407645" type="text/javascript"></script>
+<script src="/Volumes/WORK/ruby/rails/busk/public/javascripts/new/jquery.elastic.js?1301407645" type="text/javascript"></script>
+<script src="/Volumes/WORK/ruby/rails/busk/public/javascripts/new/jquery.mask.js?1301407645" type="text/javascript"></script>
+<script src="/Volumes/WORK/ruby/rails/busk/public/javascripts/new/placeholder.js?1301407645" type="text/javascript"></script>
+<script src="/Volumes/WORK/ruby/rails/busk/public/javascripts/new/dispatcher.js?1301407645" type="text/javascript"></script>
+<script src="/Volumes/WORK/ruby/rails/busk/public/javascripts/i18n.js?1301407645" type="text/javascript"></script>
+<script src="/Volumes/WORK/ruby/rails/busk/public/javascripts/i18n-messages.js?1302724955" type="text/javascript"></script>
+<script src="/Volumes/WORK/ruby/rails/busk/public/javascripts/new/base.js?1301407645" type="text/javascript"></script>
+<script src="/Volumes/WORK/ruby/rails/busk/public/javascripts/new/function.js?1302298781" type="text/javascript"></script>
+<script src="/Volumes/WORK/ruby/rails/busk/public/javascripts/new/search.js?1302275591" type="text/javascript"></script>
+<script src="/Volumes/WORK/ruby/rails/busk/public/javascripts/new/suggest_search.js?1301940828" type="text/javascript"></script>
+<script src="/Volumes/WORK/ruby/rails/busk/public/javascripts/new/pagination.js?1302298781" type="text/javascript"></script>
+<script src="/Volumes/WORK/ruby/rails/busk/public/javascripts/new/jquery.validate.pack.js?1301407645" type="text/javascript"></script>
+
+  
+  
+
+</head>
+<body id="activities-index" class="logged  has-js safari capable" data-layout="results">
+  <div class="header">
+    <h1><a href="/"><img src="/Volumes/WORK/ruby/rails/busk/public/images/new/bt_busk_p.png" width="49" height="20" alt="Busk é a sua rede social de notícias." border="0"></a></h1>
+
+<div class="header_content" style="left: 89px; ">
+    <h3>Descubra as últimas do seu mundo. O que é o <a href="/about">Busk.com?</a></h3>
+
+      <script type="text/javascript">
+    user.id = '1';
+    user.username = 'busklogin1';
+  </script>
+
+
+
+    <div class="login logged">
+      <div class="login_content">
+        <a href="#" class="link" rel="nofollow">
+          <img alt="No_avatar_mini" height="16" src="/Volumes/WORK/ruby/rails/busk/public/images/no_avatar_mini.png?1301407645" width="16">
+          busklogin1
+          <span class="ico_color">&nbsp;</span>
+        </a>
+
+        <ul>
+          <li><a href="/busklogin1/identity_info?type=tags" rel="nofollow">Coleção (0)</a></li>
+          <li><a href="/activities" rel="nofollow">Atividades</a></li>
+          <li><a href="/busklogin1/messages" rel="nofollow">Mensagens</a></li>
+          <li><a href="/busklogin1/followings" rel="nofollow">Pessoas (0/0)</a></li>
+
+          
+
+          <li><span><a href="/users/find/new" rel="nofollow">Encontrar Pessoas</a></span></li>
+
+          <li><a href="/profile/edit" rel="nofollow">Configurações</a></li>
+          <li><a href="/profile/privacy/edit" rel="nofollow">Privacidade</a></li>
+
+          <li class="logout"><a href="/users/sign_out" rel="nofollow">Sair</a></li>
+        </ul>
+      </div>
+    </div>
+</div>
+
+  </div>
+
+  <hr>
+	<div id="bar_categories" class="bar_categories">
+  <div class="icos_categories" style="left: 89px; ">
+    <ul id="list_categories" class="list_categories">
+      
+    </ul>
+  </div>
+</div>
+
+	<hr>
+	<div class="user_login" id="user_login" style="height: 959px; ">
+  <div class="user_login_content">
+    <div class="user" id="1">
+      <div class="user_detail">
+        <div class="avatar"><img alt="Jack Bauer (busklogin1)" height="170" src="/Volumes/WORK/ruby/rails/busk/public/images/no_avatar_big.png?1301407645" title="Jack Bauer (busklogin1)" width="170"></div>
+
+        <div class="detail">
+          <h1>Jack Bauer</h1>
+        </div>
+      </div>
+
+      <h4>
+        <a href="/busklogin1">u:busklogin1</a><br>
+        <br>
+        
+      </h4>
+
+      
+
+      
+        <div class="options">
+          <div class="bt">
+            <span class="bt_left">&nbsp;</span>
+            <div class="bt_content">
+              <a href="/invitations/contacts/new" rel="nofollow">Convide amigos</a>
+            </div>
+            <span class="bt_right">&nbsp;</span>
+          </div>
+        </div>
+      
+    </div>
+
+    
+
+    <ul class="accordion">
+      <li class="item item_collection">
+        <h3><a href="/busklogin1/identity_info?type=tags" rel="nofollow">Coleção (0)</a></h3>
+      </li>
+
+      
+        <li class="item item_activities selected">
+          <h3><a href="/activities" rel="nofollow">Atividades</a></h3>
+        </li>
+      
+
+      <li class="item item_message">
+        <h3><a href="/busklogin1/messages" rel="nofollow">Mensagens</a></h3>
+      </li>
+
+      
+        <li class="item item_friends">
+          <h3>
+            <a href="/busklogin1/followings" rel="nofollow">Pessoas (0/0)</a>
+          </h3>
+        </li>
+
+        
+
+        <li class="item item_find_friends">
+          <h3><span><a href="/users/find/new" rel="nofollow">Encontrar Pessoas</a></span></h3>
+        </li>
+      
+
+      <li class="item item_caption view">
+        <h3><a href="/profile/edit" rel="nofollow">Configurações</a></h3>
+
+        <ul class="accordion_content">
+          <li class="item_profile"><h3><a href="/profile/edit" rel="nofollow">Perfil</a></h3></li>
+          <li class="item_privacy"><h3><a href="/profile/privacy/edit" rel="nofollow">Privacidade</a></h3></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="close" style="height: 959px; ">
+    <a href="#" rel="nofollow">close</a>
+  </div>
+</div>
+	<hr>
+
+	<div class="content">
+		<h5 class="logo">
+			<a href="/home/modal" rel="modal nofollow"><img src="/Volumes/WORK/ruby/rails/busk/public/images/new/bg_default_busk_result.png" border="0" alt="Busk é a sua rede social de notícias."></a>
+		</h5>
+
+		<div class="search direct_messages">
+  <form action="/search" method="get">
+    <div class="input_search">
+      <input type="text" id="terms" class="txt_search url_import input_suggest_search" name="q" placeholder="Encontre artigos sobre:" value="" autocomplete="off">
+      <div class="box box_list_suggest_search">
+  <span class="seta">&nbsp;</span>
+  <div class="box_content">
+    <div class="list_suggest_search_container">
+      <div class="list_suggest_search list_suggest_search_users">
+        <h3>Usuários</h3>
+        <div class="list_suggest_search_html">
+          <div class="ajax_load">Carregando...</div>
+        </div>
+      </div>
+
+      <div class="list_suggest_search list_suggest_search_categories">
+        <h3>Categorias</h3>
+        <div class="list_suggest_search_html">
+          <div class="ajax_load">Carregando...</div>
+        </div>
+      </div>
+
+      <div class="list_suggest_search list_suggest_search_sites">
+        <h3>Sites</h3>
+        <div class="list_suggest_search_html">
+          <div class="ajax_load">Carregando...</div>
+        </div>
+      </div>
+
+      <div class="list_suggest_search list_suggest_search_tags">
+        <h3>Tags</h3>
+        <div class="list_suggest_search_html">
+          <div class="ajax_load">Carregando...</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="seta_down">&nbsp;</span>
+</div>
+    </div>
+
+    <button type="submit" class="bt_busk">BUSK</button>
+  </form>
+
+  <div class="action_search_term">
+    <a href="#" id="start_button" class="item_tooltip item_mobile bt_action_search" rel="nofollow">Fav</a>
+
+      <div class="tooltip box box_saved_search">
+        <span class="seta">&nbsp;</span>
+        <div class="box_content">
+          <ul>
+
+
+            <li class="saved_terms_list">
+              <h3>Buscas salvas</h3>
+
+              <ul id="saved_terms_list">
+                
+                  <li id="no_terms"><h3><span class="no_term">Sem buscas salvas</span></h3></li>
+                
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <span class="seta_down">&nbsp;</span>
+      </div>
+  </div>
+
+  <form action="/Volumes/WORK/ruby/rails/busk/public/external_contents/clipping" method="post"><div style="margin:0;padding:0;display:inline"><input name="authenticity_token" type="hidden" value="W3E3bopn/3ie1/t/OmXVyiryG5OlZth+HwmINRRUOFc="></div>
+    <div class="import_articles_container" style="">
+  <div class="import_articles" style="display: block; " data-loaded="false">
+    <div class="notify" style="display: block; ">
+      <span class="notify_left">&nbsp;</span>
+      <div class="notify_content success">
+        <span class="ico">&nbsp;</span>
+
+
+          <h4 class="msg">Gostou deste conteúdo? Colecione e compartilhe com seus amigos!</h4>
+
+          <div class="bt right">
+            <span class="bt_left">&nbsp;</span>
+            <div class="bt_content"><input type="submit" value="Colecionar" style="opacity: 0.5; " class="selected" disabled=""></div>
+            <span class="bt_right">&nbsp;</span>
+          </div>
+      </div>
+      <span class="notify_right">&nbsp;</span>
+    </div>
+
+    <div class="item_entry selected">
+      <div class="articles">
+        <div class="item_link_post">
+          <div class="box box_save_item external" style="display: block; visibility: visible; ">
+            <span class="seta">&nbsp;</span>
+            <div class="box_content">
+                <input type="hidden" class="url" name="url" value="http://www.youtube.com/watch?v=hja-GRIX3CA">
+
+                <div class="list_tags_container">
+                  <div class="list_tags_man">
+                    <div class="list_tags_wrap">
+                      <div class="list_tags_area">
+                        <ul class="list"></ul>
+
+                        <input class="input_tags_complite" autocomplete="off" placeholder="Tags">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="list_tags"></div>
+                </div>
+
+                <input type="hidden" class="external_content_message_body" name="message[body]" value="http://www.youtube.com/watch?v=hja-GRIX3CA">
+                <input type="hidden" class="external_content_clipping_tag_list" name="clipping[tag_list]" value="">
+                <input type="hidden" class="external_content" name="external_content" value="1">
+
+                <span>Separe as tags com vírgula</span>
+
+                <div class="actions_save_item">
+                  <label class="checkbox">
+                    <input type="checkbox" name="clipping[non_private]" value="0"> Não compartilhar <span>(visível somente para você)</span>
+                  </label>
+
+                  <div class="bt right">
+                    <span class="bt_left">&nbsp;</span>
+                    <div class="bt_content"><input name="commit" type="submit" value="Confirmar" style="opacity: 0.5; " class="selected" disabled=""></div>
+                    <span class="bt_right">&nbsp;</span>
+                  </div>
+                </div>
+            </div>
+            <span class="seta_down">&nbsp;</span>
+          </div>
+
+          <div class="link_post">
+            <div class="autor_publisher">
+              <a href="#"><img src="/Volumes/WORK/ruby/rails/busk/public/images/busk.png" width="16" height="16" alt="" class="external-favicon"></a>
+            </div>
+
+            <a href="#" class="item_title" title="YouTube - Joomla Tutorial Part 1 - Adding Articles and Menu Items">YouTube - Joomla Tutorial Part 1 - Adding Articles and Menu Items</a>
+          </div>
+
+          <div class="options">
+            <div class="bt_item bt_remove_item">
+              <span class="bt_left">&nbsp;</span>
+              <div class="bt_content">
+                <a href="#" class="bt_remove_item">
+                  Remover</a>
+              </div>
+              <span class="bt_right">&nbsp;</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="post" style="display: block; ">
+          <div class="post_content"><div class="external-content"><div class="flash_busk"><object width="706" height="422" style="">
+ <param name="movie" value="http://www.youtube.com/v/hja-GRIX3CA?fs=1&amp;hl=en_US">
+<param name="allowFullScreen" value="true">
+<param name="allowscriptaccess" value="always">
+<param name="wmode" value="opaque"><embed wmode="opaque" src="http://www.youtube.com/v/hja-GRIX3CA?fs=1&amp;hl=en_US" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="706" height="422"></object></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <input type="hidden" class="external_content_message_body" name="message[body]" value="http://www.youtube.com/watch?v=hja-GRIX3CA">
+  </form>
+</div>
+
+
+    
+
+
+  <div class="message_insert">
+    <div class="comment_user">
+      <div class="direct_messages">
+        <form action="/users/1/direct_messages" class="send_message" method="post"><div style="margin:0;padding:0;display:inline"><input name="authenticity_token" type="hidden" value="W3E3bopn/3ie1/t/OmXVyiryG5OlZth+HwmINRRUOFc="></div>
+          <img alt="Jack Bauer (busklogin1)" class="avatar_user" height="48" src="/Volumes/WORK/ruby/rails/busk/public/images/no_avatar_profile.png?1301407645" title="Jack Bauer (busklogin1)" width="48">
+
+          <div class="comment_insert">
+            <div class="comment_user_container">
+              <span class="comment_arrow">&nbsp;</span>
+
+              <div class="comment_user_content">
+                <div class="comment_user_insert">
+                  <a href="#">Olá <strong>busklogin1</strong>! O que deseja compartilhar agora?</a>
+                </div>
+
+                <div class="textarea_elastic">
+                  <div class="list_followings_container">
+                    <textarea class="url_import input_followings_complite"></textarea>
+                    <div class="box box_users box_users_bottom">
+                      <span class="seta">&nbsp;</span>
+                      <div class="box_content">
+                        <div class="list_followings"><ul class="list_followings_content"></ul></div>
+                      </div>
+                      <span class="seta_down">&nbsp;</span>
+                    </div>
+                  </div>
+
+                  <div class="options_message">
+                    <div class="options_users">
+                      <a href="#" class="item_tooltip ico_users" title="Selecionar Amigos">Selecionar Amigos</a>
+                    </div>
+
+                    <div class="box box_users">
+                      <span class="seta">&nbsp;</span>
+                      <div class="box_content">
+                        <div class="list_followings_container">
+                          <input type="text" class="input_text input_followings_complite" placeholder="Para:" autocomplete="off" style="display: inline-block; ">
+
+                          <div class="list_followings"><ul class="list_followings_content"></ul></div>
+                        </div>
+                      </div>
+                      <span class="seta_down">&nbsp;</span>
+                    </div>
+
+                    <div class="bt">
+                      <span class="bt_left">&nbsp;</span>
+                      <div class="bt_content"><input type="submit" value="Enviar"></div>
+                      <span class="bt_right">&nbsp;</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="send_users">
+                <input type="hidden" class="send_message_friend" name="message[to]">
+
+                <div class="clipping_message">
+                  <a href="#" class="bt_clipping item_tooltip" title="Mensagem pública">Clipping</a>
+                  <input type="hidden" name="message[private]" value="false">
+                </div>
+              </div>
+
+              <div class="import_articles_container" style="display: none;">
+  <div class="import_articles" style="display: none;" data-loaded="false">
+    <div class="notify">
+      <span class="notify_left">&nbsp;</span>
+      <div class="notify_content success">
+        <span class="ico">&nbsp;</span>
+
+
+          <h4 class="msg">Gostou deste conteúdo? Colecione e compartilhe com seus amigos!</h4>
+
+          <div class="bt right">
+            <span class="bt_left">&nbsp;</span>
+            <div class="bt_content"><input type="submit" value="Colecionar"></div>
+            <span class="bt_right">&nbsp;</span>
+          </div>
+      </div>
+      <span class="notify_right">&nbsp;</span>
+    </div>
+
+    <div class="item_entry selected">
+      <div class="articles">
+        <div class="item_link_post">
+          <div class="box box_save_item external">
+            <span class="seta">&nbsp;</span>
+            <div class="box_content">
+                <input type="hidden" class="url" name="url">
+
+                <div class="list_tags_container">
+                  <div class="list_tags_man">
+                    <div class="list_tags_wrap">
+                      <div class="list_tags_area">
+                        <ul class="list"></ul>
+
+                        <input class="input_tags_complite" autocomplete="off" placeholder="Tags">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="list_tags"></div>
+                </div>
+
+                <input type="hidden" class="external_content_message_body" name="message[body]">
+                <input type="hidden" class="external_content_clipping_tag_list" name="clipping[tag_list]">
+                <input type="hidden" class="external_content" name="external_content" value="0">
+
+                <span>Separe as tags com vírgula</span>
+
+                <div class="actions_save_item">
+                  <label class="checkbox">
+                    <input type="checkbox" name="clipping[non_private]" value="0"> Não compartilhar <span>(visível somente para você)</span>
+                  </label>
+
+                  <div class="bt right">
+                    <span class="bt_left">&nbsp;</span>
+                    <div class="bt_content"><input name="commit" type="submit" value="Confirmar"></div>
+                    <span class="bt_right">&nbsp;</span>
+                  </div>
+                </div>
+            </div>
+            <span class="seta_down">&nbsp;</span>
+          </div>
+
+          <div class="link_post">
+            <div class="autor_publisher">
+              <a href="#"><img src="/Volumes/WORK/ruby/rails/busk/public/images/busk.png?1284154479" width="16" height="16" alt="" class="external-favicon"></a>
+            </div>
+
+            <a href="#" class="item_title"><!-- LOAD HERE TITLE --></a>
+          </div>
+
+          <div class="options">
+            <div class="bt_item bt_remove_item">
+              <span class="bt_left">&nbsp;</span>
+              <div class="bt_content">
+                <a href="#" class="bt_remove_item">
+                  Remover</a>
+              </div>
+              <span class="bt_right">&nbsp;</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="post">
+          <div class="post_content">
+            <!-- LOAD HERE CLEANED CONTENT -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+<div class="result_search">
+  <div class="information">
+    <p>Veja as atividades compartilhadas pelas pessoas que você segue</p>
+
+    <div class="option_button">
+      <a href="#" id="busk_star" class="item_tooltip item_mobile ico_option_button" rel="nofollow">*</a>
+
+      <div id="busk_star_box" class="tooltip box">
+        <span class="seta">&nbsp;</span>
+        <div class="box_content">
+          <ul id="activities_filter">
+            <li class="line">
+              <label class="checkbox">
+                <input type="checkbox">
+              </label>
+              <a href="#order_full" class="bt_order_full" rel="nofollow" title="Visualização expandida">Visualização expandida</a>
+            </li>
+            <li>
+              <label class="checkbox checked"><input id="" type="checkbox" value="1"></label><a href="/activities">Artigos</a>
+            </li>
+            <li>
+              <label class="checkbox"><input id="" type="checkbox" value="1"></label><a href="/activities?types%5B%5D=feed_item&amp;types%5B%5D=search">Buscas</a>
+            </li>
+            <li>
+              <label class="checkbox"><input id="" type="checkbox" value="1"></label><a href="/activities?types%5B%5D=feed_item&amp;types%5B%5D=search_term">Buscas Salvas</a>
+            </li>
+            <li>
+              <label class="checkbox"><input id="" type="checkbox" value="1"></label><a href="/activities?types%5B%5D=feed_item&amp;types%5B%5D=direct_message">Mensagens</a>
+            </li>
+          </ul>
+        </div>
+        <span class="seta_down">&nbsp;</span>
+      </div>
+    </div>
+  </div>
+
+  
+    <p>Nenhuma atividade foi registrada</p>
+  
+</div>
+
+<script type="text/javascript">
+  $(function(){
+    selected('.item_activities');
+  });
+</script>
+
+
+    <div class="ajax_load ajax_load_pagination">Carregando...</div>
+  </div>
+
+  <hr>
+
+	<div class="footer">
+  <div class="footer_content" style="left: 89px; ">
+    <ul class="menu">
+      <li><a href="/" rel="nofollow">Home</a></li>
+      <li class="full"><a href="#" class="item_tooltip item_mobile" rel="nofollow">Buscas populares</a>
+
+<div class="tooltip box">
+  <span class="seta">&nbsp;</span>
+  <div class="box_content">
+    <p></p>
+  </div>
+  <span class="seta_down">&nbsp;</span>
+</div></li>
+
+      <li>
+        <a href="#" class="item_tooltip item_mobile" rel="nofollow"><span class="font_size_11">A</span><span class="font_size_18">A</span></a>
+
+        <div class="tooltip box">
+          <span class="seta">&nbsp;</span>
+          <div class="box_content">
+            <ul class="font_family">
+              <li><a href="#" class="font_family_arial selected" rel="nofollow">Arial</a></li>
+              <li><a href="#" class="font_family_georgia" rel="nofollow">Georgia</a></li>
+              <li><a href="#" class="font_family_tahoma" rel="nofollow">Tahoma</a></li>
+              <li><a href="#" class="font_family_lucida_grande" rel="nofollow">Lucida Grande</a></li>
+            </ul>
+
+            <div class="font_size">
+              <p>Tamanho da fonte<br>dentro dos artigos:</p>
+
+              <ul>
+                <li><a href="#" class="font_size_12 selected" rel="nofollow"><span class="font_size_16">A</span><br>12pt</a></li>
+                <li><a href="#" class="font_size_14" rel="nofollow"><span class="font_size_20">A</span><br>14pt</a></li>
+                <li class="last"><a href="#" class="font_size_16" rel="nofollow"><span class="font_size_24">A</span><br>16pt</a></li>
+              </ul>
+            </div>
+          </div>
+          <span class="seta_down">&nbsp;</span>
+        </div>
+      </li>
+    </ul>
+
+    <ul class="menu_user">
+        <li><a href="/locale/en" class="item_mobile" rel="nofollow">English</a></li>
+  <li><a href="/locale/es" class="item_mobile" rel="nofollow">Español</a></li>
+
+
+      <li>
+        <a href="mailto:busk@busk.com" rel="nofollow">Contato</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+	<script src="/Volumes/WORK/ruby/rails/busk/public/javascripts/new/jquery.timeago.js?1301407645" type="text/javascript"></script>
+<script src="/Volumes/WORK/ruby/rails/busk/public/javascripts/new/timeago.js?1301407645" type="text/javascript"></script>
+	
+  
+
+  <script type="text/javascript">
+//<![CDATA[
+$.ajaxSetup({ async: false });
+//]]>
+</script>
+
+
+</body></html>
