@@ -1,7 +1,8 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.5'
+gem 'rails', '3.0.7'
 #gem 'rails', :git => 'git://github.com/rails/rails.git'
+
 gem 'jammit'
 gem 'yui-compressor'
 gem 'omniauth'

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ën">
+<html lang="en">
   <head>
     <title>helpdeck<%= ": #{title}" if title %></title>
     <%= include_stylesheets :framework, :application %>
@@ -62,6 +62,10 @@
           <br/><a href="http://twitter.com/edenwood" target="_blank">@edenwood</a>
           - <a href="http://3den.org" target="_blank">3den.org</a>
         </footer>
+
+        <div class="ads">
+          <%= render 'layouts/license' %>
+        </div>
       </aside>
 
       <section class="col col_12">

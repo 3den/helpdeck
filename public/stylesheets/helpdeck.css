@@ -740,3 +740,11 @@ form .actions {
     font-size: 12px;
     list-style: square;
 }
+
+.ads {
+    margin: 10px 5px;
+    text-align: center;
+}
+.ads div {
+    margin-bottom: 10px;
+}
